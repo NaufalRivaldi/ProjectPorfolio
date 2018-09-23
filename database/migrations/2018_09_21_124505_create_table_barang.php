@@ -1,0 +1,51 @@
+<?php
+
+use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
+
+class CreateTableBarang extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('barang', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('nama_barang');
+            $table->integer('id_kategori_barang')->unsigned();
+            $table->integer('id_kategori_bahan')->unsigned();
+            $table->string('jumlah');
+            $table->double('harga',8,2);
+            $table->text('keterangan');
+            $table->timestamps();
+
+            //set FK K Barang
+            $table->foreign('id_kategori_barang')
+                    ->references('id')
+                    ->on('kategori_barang')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
+
+            //set FK K Barang
+            $table->foreign('id_kategori_bahan')
+                    ->references('id')
+                    ->on('kategori_bahan')
+                    ->onUpdate('cascade')
+                    ->onDelete('cascade');
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('barang');
+    }
+}
