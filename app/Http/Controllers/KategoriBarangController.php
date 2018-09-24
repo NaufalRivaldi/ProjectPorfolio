@@ -33,4 +33,26 @@ class KategoriBarangController extends Controller
     	$kategori = KategoriBarang::findOrFail($id);
     	return view('admin.kategori_barang.edit', compact('kategori'));
     }
+
+    public function update($id, Request $request){
+    	$input = $request->all();
+    	$kategori = KategoriBarang::findOrFail($id);
+
+    	$validator = Validator::make($input, [
+    		'nama_kategori' => 'required|string|unique:kategori_barang,nama_kategori'
+    	]);
+
+    	if($validator->fails()){
+    		return redirect('admin/kategoribarang')->withErrors($validator);
+    	}
+
+    	$kategori->update($input);
+    	return redirect('admin/kategoribarang');
+    }
+
+    public function delete($id){
+    	$kategori = KategoriBarang::findOrFail($id);
+    	$kategori->delete();
+    	return redirect('admin/kategoribarang');
+    }
 }

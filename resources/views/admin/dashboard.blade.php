@@ -21,6 +21,9 @@
     <section class="content">
       <!-- Small boxes (Stat box) -->
       <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-success" role="alert">Welcome to web cpanel Putu Tailor and Leather</div>
+        </div>
         <div class="col-lg-6 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
@@ -51,12 +54,6 @@
           </div>
         </div>
         <!-- ./col -->
-      </div>
-      <!-- /.row -->
-      <div class="row">
-        <div class="col-md-12">
-          <div class="box box-primary">...</div>
-        </div>
       </div>
     </section>
     <!-- /.content -->

@@ -1,6 +1,6 @@
 @extends('admin')
 
-@section('title', 'Admin | Kategori Barang')
+@section('title', 'Admin | Kategori Bahan')
 
 @section('konten')
 <!-- Content Wrapper. Contains page content -->
@@ -8,13 +8,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Item Category
+        Material Category
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li></i> Settings</li>
-        <li class="active">Item Category</li>
+        <li class="active">Material Category</li>
       </ol>
     </section>
 
@@ -49,9 +49,9 @@
                       <td>{{$no++}}</td>
                       <td>{{$data->nama_kategori}}</td>
                       <td>
-                        <a href="{{url('admin/kategoribarang/'.$data->id.'/edit')}}"><i class="fa fa-gear text-primary"></i></a>
+                        <a href="{{url('admin/kategoribahan/'.$data->id.'/edit')}}"><i class="fa fa-gear text-primary"></i></a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="{{url('admin/kategoribarang/delete/'.$data->id)}}" onclick="return valDelete();"><i class="fa fa-trash text-danger"></i></a>
+                        <a href="{{url('admin/kategoribahan/delete/'.$data->id)}}" onclick="return valDelete();"><i class="fa fa-trash text-danger"></i></a>
                       </td>
                     </tr>
                   @endforeach
@@ -76,10 +76,10 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Insert Data Item Category</h4>
+        <h4 class="modal-title" id="myModalLabel">Insert Data Material Category</h4>
       </div>
       <div class="modal-body">
-        <form  method="post" action="{{URL::to('admin/kategoribarang/')}}">
+        <form  method="post" action="{{URL::to('admin/kategoribahan/')}}">
           {{csrf_field()}}
           <input type="hidden" name="_token" value="{{csrf_token()}}">
 

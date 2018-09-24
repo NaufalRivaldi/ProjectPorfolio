@@ -1,6 +1,6 @@
 @extends('admin')
 
-@section('title', 'Admin | Edit - Kategori Barang')
+@section('title', 'Admin | Edit - Kategori Bahan')
 
 @section('konten')
 <!-- Content Wrapper. Contains page content -->
@@ -8,13 +8,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Edit Item Category
+        Edit Material Category
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
         <li></i> Settings</li>
-        <li class="active">Item Category</li>
+        <li class="active">Material Category</li>
       </ol>
     </section>
 
@@ -26,7 +26,7 @@
           <div class="box box-primary">
             <div class="container-fluid">
               <br>
-                <form  method="post" action="{{URL::to('admin/kategoribarang/update/'.$kategori->id)}}">
+                <form  method="post" action="{{URL::to('admin/kategoribahan/update/'.$kategori->id)}}">
                   {{csrf_field()}}
                   <input type="hidden" name="_token" value="{{csrf_token()}}">
 
