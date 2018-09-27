@@ -22,7 +22,7 @@
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-md-12">
-          <div class="alert alert-success" role="alert">Welcome to web cpanel Putu Tailor and Leather</div>
+          <div class="alert alert-success" role="alert">Selamat datang di cpanel Putu Tailor and Leather</div>
         </div>
         <div class="col-lg-6 col-xs-6">
           <!-- small box -->

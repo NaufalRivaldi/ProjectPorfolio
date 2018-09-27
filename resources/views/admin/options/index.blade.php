@@ -8,13 +8,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Options
+        Opsi
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li></i> Settings</li>
-        <li class="active">Options</li>
+        <li></i> Pengaturan</li>
+        <li class="active">Opsi</li>
       </ol>
     </section>
 
@@ -91,7 +91,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Options</h4>
+        <h4 class="modal-title" id="myModalLabel">Opsi</h4>
       </div>
       <div class="modal-body">
         <form  method="post" action="{{URL::to('admin/options/')}}">

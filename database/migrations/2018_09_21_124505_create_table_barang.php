@@ -16,8 +16,9 @@ class CreateTableBarang extends Migration
         Schema::create('barang', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nama_barang');
+            $table->string('foto')->nullable();
             $table->integer('id_kategori_barang')->unsigned();
-            $table->integer('id_kategori_bahan')->unsigned();
+            $table->string('bahan');
             $table->string('jumlah');
             $table->double('harga',8,2);
             $table->text('keterangan');
@@ -27,13 +28,6 @@ class CreateTableBarang extends Migration
             $table->foreign('id_kategori_barang')
                     ->references('id')
                     ->on('kategori_barang')
-                    ->onUpdate('cascade')
-                    ->onDelete('cascade');
-
-            //set FK K Barang
-            $table->foreign('id_kategori_bahan')
-                    ->references('id')
-                    ->on('kategori_bahan')
                     ->onUpdate('cascade')
                     ->onDelete('cascade');
         });

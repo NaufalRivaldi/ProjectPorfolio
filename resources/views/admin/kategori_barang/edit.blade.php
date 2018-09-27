@@ -8,13 +8,13 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Edit Item Category
+        Edit Kategori Barang
         <small>Control panel</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li></i> Settings</li>
-        <li class="active">Item Category</li>
+        <li></i> Pengaturan</li>
+        <li class="active">Kategori Barang</li>
       </ol>
     </section>
 

@@ -15,20 +15,22 @@ Route::get('admin', 'AdminController@index');
 
 //Admin Kategori Barang
 Route::group(['middleware' => ['web']],function(){
+	Route::post('admin/barang', 'BarangController@create');
+	Route::post('admin/barang/update/{id}', 'BarangController@update');
+	Route::get('admin/barang', 'BarangController@index');
+	Route::get('admin/barang/view', 'BarangController@view');
+	Route::get('admin/barang/show/{id}', 'BarangController@show');
+	Route::get('admin/barang/{id}/edit', 'BarangController@edit');
+	Route::get('admin/barang/delete/{id}', 'BarangController@delete');
+});
+
+//Admin Kategori Barang
+Route::group(['middleware' => ['web']],function(){
 	Route::post('admin/kategoribarang', 'KategoriBarangController@create');
 	Route::post('admin/kategoribarang/update/{id}', 'KategoriBarangController@update');
 	Route::get('admin/kategoribarang', 'KategoriBarangController@index');
 	Route::get('admin/kategoribarang/{id}/edit', 'KategoriBarangController@edit');
 	Route::get('admin/kategoribarang/delete/{id}', 'KategoriBarangController@delete');
-});
-
-//Admin Kategori Bahan
-Route::group(['middleware' => ['web']],function(){
-	Route::post('admin/kategoribahan', 'KategoriBahanController@create');
-	Route::post('admin/kategoribahan/update/{id}', 'KategoriBahanController@update');
-	Route::get('admin/kategoribahan', 'KategoriBahanController@index');
-	Route::get('admin/kategoribahan/{id}/edit', 'KategoriBahanController@edit');
-	Route::get('admin/kategoribahan/delete/{id}', 'KategoriBahanController@delete');
 });
 
 //Admin Options

@@ -98,29 +98,28 @@
         <li><a href="{{url('admin')}}"><i class="fa fa-dashboard"></i> <span>Dashboard</span></a></li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-shopping-bag"></i> <span>Product</span>
+            <i class="fa fa-shopping-bag"></i> <span>Barang</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{url('admin/leather')}}"><i class="fa fa-circle-o"></i>Leather</a></li>
-            <li><a href="{{url('admin/tailor')}}"><i class="fa fa-circle-o"></i>Tailor</a></li>
+            <li><a href="{{url('admin/barang')}}"><i class="fa fa-circle-o"></i>Tambah Barang</a></li>
+            <li><a href="{{url('admin/barang/view')}}"><i class="fa fa-circle-o"></i>Lihat Barang</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-gear"></i>
-            <span>Settings</span>
+            <span>Pengaturan</span>
             <span class="pull-right-container">
-              <span class="label label-danger pull-right">4</span>
+              <span class="label label-danger pull-right">3</span>
             </span>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{url('admin/user')}}"><i class="fa fa-circle-o"></i>User Admin</a></li>
-            <li><a href="{{url('admin/kategoribarang')}}"><i class="fa fa-circle-o"></i>Item Category</a></li>
-            <li><a href="{{url('admin/kategoribahan')}}"><i class="fa fa-circle-o"></i>Material Category</a></li>
-            <li><a href="{{url('admin/options')}}"><i class="fa fa-circle-o"></i>Options</a></li>
+            <li><a href="{{url('admin/kategoribarang')}}"><i class="fa fa-circle-o"></i>Kategori Barang</a></li>
+            <li><a href="{{url('admin/options')}}"><i class="fa fa-circle-o"></i>Opsi</a></li>
           </ul>
         </li>
       </ul>
