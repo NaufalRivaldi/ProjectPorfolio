@@ -22,6 +22,17 @@ class BarangController extends Controller
     	return view('admin.barang.view', compact('barang'));
     }
 
+    public function search(Request $request){
+        $keyword = $request->input('keyword');
+        $bahan = $request->input('bahan');
+
+        $query = Barang::where('nama_barang', 'LIKE', '%'.$keyword.'%');
+        (!empty($bahan)) ? $query->where('bahan', $bahan) : '';
+
+        $barang = $query->paginate(5);
+        return view('admin.barang.view', compact('barang'));
+    }
+
     public function show($id){
     	$barang = Barang::findOrFail($id);
 

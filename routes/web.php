@@ -12,10 +12,12 @@
 */
 
 Route::get('admin', 'AdminController@index');
+Route::get('admin/dashboard', 'AdminController@dashboard');
 
-//Admin Kategori Barang
+//Admin Barang
 Route::group(['middleware' => ['web']],function(){
 	Route::post('admin/barang', 'BarangController@create');
+	Route::post('admin/barang/view/search', 'BarangController@search');
 	Route::post('admin/barang/update/{id}', 'BarangController@update');
 	Route::get('admin/barang', 'BarangController@index');
 	Route::get('admin/barang/view', 'BarangController@view');

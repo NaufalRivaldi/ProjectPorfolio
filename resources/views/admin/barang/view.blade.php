@@ -31,6 +31,26 @@
                 <div class="pull-left">
                   <a href="{{url('admin/barang')}}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Data</a>
                 </div>
+                <div class="pull-right">
+                  <form class="form-inline" method="post" action="{{URL::to('admin/barang/view/search')}}">
+                    {{csrf_field()}}
+                    <input type="hidden" name="_token" value="{{csrf_token()}}">
+                    
+                    <div class="form-group">
+                      <select name="bahan" class="form-control">
+                        <option value="">Pilih Bahan..</option>
+                        <option value="leather">Leather</option>
+                        <option value="tailor">Tailor</option>
+                      </select>
+                    </div>
+                    <div class="input-group">
+                      <input type="search" name="keyword" placeholder="Cari Nama Barang.." class="form-control">
+                      <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit">Cari</button>
+                      </span>
+                    </div>
+                  </form>
+                </div>
               </p>
               @if(!empty('$barang'))
               <table class="table table-striped">
