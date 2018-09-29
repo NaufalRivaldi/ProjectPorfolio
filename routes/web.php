@@ -11,34 +11,42 @@
 |
 */
 
-Route::get('admin', 'AdminController@index');
-Route::get('admin/dashboard', 'AdminController@dashboard');
+Route::get('admin', 'AuthController@getlogin')->middleware('guest');
+Route::post('admin', 'AuthController@postlogin')->middleware('guest')->name('login');
+Route::get('admin/user/', 'AuthController@getregister')->middleware('auth');
+Route::post('admin/user/', 'AuthController@postregister')->middleware('auth')->name('register');
+Route::get('admin/user/{id}/edit', 'AuthController@edit')->middleware('auth');
+Route::post('admin/user/update/{id}', 'AuthController@update')->middleware('auth');
+Route::get('admin/user/delete/{id}', 'AuthController@delete')->middleware('auth');
+Route::get('admin/logout', 'AuthController@logout')->middleware('auth');
+
+Route::get('admin/dashboard', 'AdminController@dashboard')->middleware('auth');
 
 //Admin Barang
 Route::group(['middleware' => ['web']],function(){
-	Route::post('admin/barang', 'BarangController@create');
-	Route::post('admin/barang/view/search', 'BarangController@search');
-	Route::post('admin/barang/update/{id}', 'BarangController@update');
-	Route::get('admin/barang', 'BarangController@index');
-	Route::get('admin/barang/view', 'BarangController@view');
-	Route::get('admin/barang/show/{id}', 'BarangController@show');
-	Route::get('admin/barang/{id}/edit', 'BarangController@edit');
-	Route::get('admin/barang/delete/{id}', 'BarangController@delete');
+	Route::post('admin/barang', 'BarangController@create')->middleware('auth');
+	Route::post('admin/barang/view/search', 'BarangController@search')->middleware('auth');
+	Route::post('admin/barang/update/{id}', 'BarangController@update')->middleware('auth');
+	Route::get('admin/barang', 'BarangController@index')->middleware('auth');
+	Route::get('admin/barang/view', 'BarangController@view')->middleware('auth');
+	Route::get('admin/barang/show/{id}', 'BarangController@show')->middleware('auth');
+	Route::get('admin/barang/{id}/edit', 'BarangController@edit')->middleware('auth');
+	Route::get('admin/barang/delete/{id}', 'BarangController@delete')->middleware('auth');
 });
 
 //Admin Kategori Barang
 Route::group(['middleware' => ['web']],function(){
-	Route::post('admin/kategoribarang', 'KategoriBarangController@create');
-	Route::post('admin/kategoribarang/update/{id}', 'KategoriBarangController@update');
-	Route::get('admin/kategoribarang', 'KategoriBarangController@index');
-	Route::get('admin/kategoribarang/{id}/edit', 'KategoriBarangController@edit');
-	Route::get('admin/kategoribarang/delete/{id}', 'KategoriBarangController@delete');
+	Route::post('admin/kategoribarang', 'KategoriBarangController@create')->middleware('auth');
+	Route::post('admin/kategoribarang/update/{id}', 'KategoriBarangController@update')->middleware('auth');
+	Route::get('admin/kategoribarang', 'KategoriBarangController@index')->middleware('auth');
+	Route::get('admin/kategoribarang/{id}/edit', 'KategoriBarangController@edit')->middleware('auth');
+	Route::get('admin/kategoribarang/delete/{id}', 'KategoriBarangController@delete')->middleware('auth');
 });
 
 //Admin Options
 Route::group(['middleware' => ['web']],function(){
-	Route::post('admin/options', 'OptionsController@create');
-	Route::post('admin/options/update/{id}', 'OptionsController@update');
-	Route::get('admin/options', 'OptionsController@index');
-	Route::get('admin/options/{id}/edit', 'OptionsController@edit');
+	Route::post('admin/options', 'OptionsController@create')->middleware('auth');
+	Route::post('admin/options/update/{id}', 'OptionsController@update')->middleware('auth');
+	Route::get('admin/options', 'OptionsController@index')->middleware('auth');
+	Route::get('admin/options/{id}/edit', 'OptionsController@edit')->middleware('auth');
 });

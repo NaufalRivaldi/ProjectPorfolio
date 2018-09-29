@@ -25,13 +25,13 @@
             <div class="halLogin">
               <h3>Putu Tailor and Leather</h3>
               <hr>
-              <form action="" method="post">
+              <form action="{{route('login')}}" method="post">
                 {{csrf_field()}}
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 
                 <div class="input-group">
-                  <span class="input-group-addon" id="username"><i class="fa fa-user"></i></span>
-                  <input type="text" name="username" class="form-control" aria-describedby="username" placeholder="Username">
+                  <span class="input-group-addon" id="email"><i class="fa fa-user"></i></span>
+                  <input type="email" name="email" class="form-control" aria-describedby="email" placeholder="Email">
                 </div><br>
                 <div class="input-group">
                   <span class="input-group-addon" id="password"><i class="fa fa-unlock-alt"></i></span>

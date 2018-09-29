@@ -43,7 +43,7 @@
           <!-- small box -->
           <div class="small-box bg-green">
             <div class="inner">
-              <h3>44</h3>
+              <h3>{{$jum_admin}}</h3>
 
               <p>User Admin</p>
             </div>
