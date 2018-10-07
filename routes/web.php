@@ -11,16 +11,22 @@
 |
 */
 
+Route::get('/', 'HomeController@index');
+
+//admin====================================================================
 Route::get('admin', 'AuthController@getlogin')->middleware('guest');
 Route::post('admin', 'AuthController@postlogin')->middleware('guest')->name('login');
-Route::get('admin/user/', 'AuthController@getregister')->middleware('auth');
-Route::post('admin/user/', 'AuthController@postregister')->middleware('auth')->name('register');
-Route::get('admin/user/{id}/edit', 'AuthController@edit')->middleware('auth');
-Route::post('admin/user/update/{id}', 'AuthController@update')->middleware('auth');
-Route::get('admin/user/delete/{id}', 'AuthController@delete')->middleware('auth');
-Route::get('admin/logout', 'AuthController@logout')->middleware('auth');
 
-Route::get('admin/dashboard', 'AdminController@dashboard')->middleware('auth');
+//Login & user backend
+Route::group(['middleware' => ['web']], function(){
+	Route::get('admin/dashboard', 'AdminController@dashboard')->middleware('auth');
+	Route::get('admin/user/', 'AuthController@getregister')->middleware('auth');
+	Route::post('admin/user/', 'AuthController@postregister')->middleware('auth')->name('register');
+	Route::get('admin/user/{id}/edit', 'AuthController@edit')->middleware('auth');
+	Route::post('admin/user/update/{id}', 'AuthController@update')->middleware('auth');
+	Route::get('admin/user/delete/{id}', 'AuthController@delete')->middleware('auth');
+	Route::get('admin/logout', 'AuthController@logout')->middleware('auth');	
+});
 
 //Admin Barang
 Route::group(['middleware' => ['web']],function(){
