@@ -46,10 +46,7 @@ class BarangController extends Controller
     		'nama_barang' => 'required',
     		'foto' => 'required|image|max:1000|mimes:jpeg,jpg,bmp,png',
     		'id_kategori_barang' => 'required',
-    		'bahan' => 'required',
-    		'jumlah' => 'required|numeric',
-    		'harga' => 'required',
-    		'keterangan' => 'sometimes'
+    		'bahan' => 'required'
     	]);
 
     	if($validation->fails()){
@@ -87,10 +84,7 @@ class BarangController extends Controller
     		'nama_barang' => 'required',
     		'foto' => 'sometimes|image|max:1000|mimes:jpeg,jpg,bmp,png',
     		'id_kategori_barang' => 'required',
-    		'bahan' => 'required',
-    		'jumlah' => 'required|numeric',
-    		'harga' => 'required',
-    		'keterangan' => 'sometimes'
+    		'bahan' => 'required'
     	]);
 
     	if($validation->fails()){

@@ -60,7 +60,6 @@
                     <th>Nama Barang</th>
                     <th>Foto</th>
                     <th>Bahan</th>
-                    <th>Harga</th>
                     <th>Action</th>
                   </tr>
                 </thead>
@@ -72,7 +71,6 @@
                       <td>{{$data->nama_barang}}</td>
                       <td><img src="{{url('dist/img/fotoupload/'.$data->foto)}}" width="80px"></td>
                       <td>{{$data->bahan}}</td>
-                      <td>Rp. {{$data->harga}}</td>
                       <td>
                         <a href="{{url('admin/barang/show/'.$data->id)}}"><i class="fa fa-eye text-success"></i></a>
                         &nbsp;&nbsp;

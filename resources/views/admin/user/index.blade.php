@@ -53,7 +53,11 @@
                       <td>
                         <a href="{{url('admin/user/'.$data->id.'/edit')}}"><i class="fa fa-gear text-primary"></i></a>
                         &nbsp;&nbsp;|&nbsp;&nbsp;
-                        <a href="{{url('admin/user/delete/'.$data->id)}}" onclick="return valDelete();"><i class="fa fa-trash text-danger"></i></a>
+                        @if(Auth::user()->id == $data->id)
+                            <a href="{{url('#')}}"><i class="fa fa-trash text-danger"></i></a>
+                        @else
+                            <a href="{{url('admin/user/delete/'.$data->id)}}" onclick="return valDelete();"><i class="fa fa-trash text-danger"></i></a>
+                        @endif
                       </td>
                     </tr>
                   @endforeach

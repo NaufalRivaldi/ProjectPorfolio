@@ -68,18 +68,6 @@
                     @endif
                   </select>
                 </div>
-                <div class="form-group">
-                  <label>Jumlah</label>
-                  <input type="text" name="jumlah" class="form-control" style="width: 50%" value="{{$barang->jumlah}}"> Pcs
-                </div>
-                <div class="form-group">
-                  <label>Harga</label>
-                  <input type="text" name="harga" class="form-control" style="width: 40%" value="{{$barang->harga}}"> (Rp)
-                </div>
-                <div class="form-group">
-                  <label>Keterangan</label>
-                  <textarea name="keterangan" class="form-control">{{$barang->keterangan}}</textarea>
-                </div>
                 <button type="submit" class="btn btn-primary">Edit Data</button>
               </form>
               <br>

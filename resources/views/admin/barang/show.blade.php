@@ -45,18 +45,6 @@
                     <td align="right">Bahan :</td>
                     <td>{{$barang->bahan}}</td>
                   </tr>
-                  <tr>
-                    <td align="right">Jumlah :</td>
-                    <td>{{$barang->jumlah}} Pcs</td>
-                  </tr>
-                  <tr>
-                    <td align="right">Harga :</td>
-                    <td>Rp. {{$barang->harga}}</td>
-                  </tr>
-                  <tr>
-                    <td align="right">Keterangan :</td>
-                    <td>{{$barang->keterangan}}</td>
-                  </tr>
                 </table>
                 <br>
                 <br>

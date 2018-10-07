@@ -59,18 +59,6 @@
                     <option value="tailor">Tailor</option>
                   </select>
                 </div>
-                <div class="form-group">
-                  <label>Jumlah</label>
-                  <input type="text" name="jumlah" class="form-control" style="width: 50%"> Pcs
-                </div>
-                <div class="form-group">
-                  <label>Harga</label>
-                  <input type="text" name="harga" class="form-control" style="width: 40%"> (Rp)
-                </div>
-                <div class="form-group">
-                  <label>Keterangan</label>
-                  <textarea name="keterangan" class="form-control"></textarea>
-                </div>
                 <button type="submit" class="btn btn-primary">Input Data</button>
               </form>
               <br>

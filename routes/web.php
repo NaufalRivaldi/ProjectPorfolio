@@ -16,6 +16,7 @@ Route::get('/', 'HomeController@index');
 //admin====================================================================
 Route::get('admin', 'AuthController@getlogin')->middleware('guest');
 Route::post('admin', 'AuthController@postlogin')->middleware('guest')->name('login');
+Route::redirect('home','admin/dashboard');
 
 //Login & user backend
 Route::group(['middleware' => ['web']], function(){

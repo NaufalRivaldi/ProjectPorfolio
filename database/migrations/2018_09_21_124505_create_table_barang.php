@@ -19,9 +19,6 @@ class CreateTableBarang extends Migration
             $table->string('foto')->nullable();
             $table->integer('id_kategori_barang')->unsigned();
             $table->string('bahan');
-            $table->string('jumlah');
-            $table->double('harga',8,2);
-            $table->text('keterangan');
             $table->timestamps();
 
             //set FK K Barang
